@@ -1,0 +1,6 @@
+1. pip install django -> para instalar o django (framework de python).
+2. pip install channels -> para instalar o channels (extensão do django para usar WebSockets).
+3. criar o routing.py dentro do ChatProject para definir rotas para os protocolos.
+4. configurar o asgi.py para utilizar as rotas criadas no routing.py.
+5. criar o consumer (componente que lida com as conexões WebSocket), que irá gerenciar a comunicação entre cliente e servidor.
+6. criar o front-end da página.
