@@ -4,3 +4,9 @@
 4. configurar o asgi.py para utilizar as rotas criadas no routing.py.
 5. criar o consumer (componente que lida com as conexões WebSocket), que irá gerenciar a comunicação entre cliente e servidor.
 6. criar o front-end da página.
+7. pip install daphne.
+8. daphne ChatProject.asgi:application ou python -m daphne ChatProject.asgi:application.
+9. ipconfig no cmd ou powerShell.
+10. pegar o ipv4 do ethernet.
+11 . python -m daphne -b xxx.xxx.x.xx -p 8000 ChatProject.asgi:application
+

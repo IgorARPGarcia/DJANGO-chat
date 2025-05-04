@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala: {{ room_name }}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script src="{% static 'script.js' %}" defer></script>
+    <style>
+        body {
+          background-image: url("{% static './chat/images/fundoReciclagem.avif' %}");
+        }
+    </style>
+</head>
+<body data-room-name="{{ room_name }}">
+    <header>
+
+    </header>
+    <main>
+        <div class="chatDiv">
+            <div class="chatHeader">
+                <div class="contact">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0,0,256,256">
+                    <g fill="#f3f0d3" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M19.0625,1c-2.5625,0.15234 -4.37109,1.05859 -5.375,2.71875l-6.59375,11.4375l4.40625,2.53125l-11.34375,1.40625l3.46875,2l-3.03125,5.15625c-0.63672,1.10156 -1.00391,3.57031 0.1875,5.375c0.47266,0.71484 1.99609,3.44141 3.34375,5.84375c1.16406,2.07422 2.25391,4.02734 2.75,4.84375c0.57813,0.78516 1.14844,1.55859 1.21875,1.65625c0.00391,0 -1.27734,-2.15234 1,-6.09375l5.90625,-10.21875l3.46875,2l-4.4375,-10.5l4.40625,2.53125l9.4375,-16.34375c1.91016,-3.56641 3.4375,-4.18359 3.78125,-4.28125c0.17188,0 0.3125,0 0.46875,0c-0.13281,-0.00391 -0.26953,-0.03516 -0.40625,-0.03125c-0.08203,0 -0.16797,-0.00391 -0.25,0c-1.39453,0.02734 -3.80469,0.01953 -6.71875,0c-1.73047,-0.01172 -3.62891,-0.02734 -5.6875,-0.03125zM32.96875,1.15625c-0.59766,0.28906 -1.89062,1.23828 -3.46875,4.1875l-3.625,6.28125l2.125,3.71875l-3.46875,2.03125l11.3125,1.375l-4.40625,2.53125l5.71875,9.90625h7.4375c3.12891,0 4.68359,-1.00781 5.34375,-1.65625c0.18359,-1.22656 -0.00391,-2.36328 -0.5625,-3.375l-6.59375,-11.40625l-4.40625,2.53125l4.46875,-10.5l-3.46875,2l-2.96875,-5.1875c-0.50391,-0.875 -1.82812,-2.05859 -3.4375,-2.4375zM32.15625,28.71875l-6.875,9.125v-5.09375h-11.4375l-3.71875,6.4375c-1.5625,2.71094 -1.44922,4.57031 -1.21875,5.46875c0.97266,0.77344 2.03125,1.19531 3.1875,1.21875h13.1875v-5.125l6.875,9.125v-4l5.96875,0.03125c1.27344,0 3.59375,-0.875 4.5625,-2.8125c0.38281,-0.76562 2,-3.47656 3.40625,-5.84375c1.21484,-2.04687 2.35156,-3.97266 2.8125,-4.8125c0.39453,-0.89453 0.76172,-1.76562 0.8125,-1.875c0,0 -1.19922,2.1875 -5.75,2.1875h-11.8125z"></path></g></g>
+                    </svg>
+                    <h2>Reciclagem</h2>
+                </div>
+                <div class="jogoDVDiv">
+                    <button class="jogoDVB" onclick="abrirJogo()">
+                        <img width="35px" height="35px" src="{% static 'chat/images/jogoDaVelha.png' %}" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="chatMain" id="chat-log">
+                <div class="roomName" data-room-name="{{ room_name }}"></div>
+            </div>
+            <div class="chatFooter">
+                <div class="inputDiv">
+                    <input class="inputConfig" type="text" placeholder="Mensagem...">
+                </div>
+                <button class="sendButton">Enviar</button>
+            </div>
+        </div>
+        <div id="jogoMain" style="display: none;">
+            <div id="tabuleiro">
+              <div class="celula" data-index="0"></div>
+              <div class="celula" data-index="1"></div>
+              <div class="celula" data-index="2"></div>
+              <div class="celula" data-index="3"></div>
+              <div class="celula" data-index="4"></div>
+              <div class="celula" data-index="5"></div>
+              <div class="celula" data-index="6"></div>
+              <div class="celula" data-index="7"></div>
+              <div class="celula" data-index="8"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
