@@ -1,11 +1,13 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat App</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="{% static 'chat/styles.css' %}">
+    <script src="{% static 'chat/script.js' %}" defer></script>
 </head>
 <body>
     <header>
@@ -22,7 +24,7 @@
                 </div>
                 <div class="jogoDVDiv">
                     <button class="jogoDVB">
-                        <img width="35px" height="35px" src="./images/jogoDaVelha.png" alt="">
+                        <img width="35px" height="35px" src="{% static 'chat/images/jogoDaVelha.png' %}" alt="">
                     </button>
                 </div>
             </div>

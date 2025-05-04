@@ -2,7 +2,7 @@ var _a;
 var roomName = "{{ room_name }}";
 var chatSocket = new WebSocket(
 //criação de um WebSocket para se conectar ao servidor.
-"ws://" + window.location.host + "/ws/chat/" + roomName + "/"
+'ws://' + window.location.host + '/ws/chat/' + roomName + '/'
 //concatenando a URL do servidor (window.location.host) com o caminho (/ws/chat/{room_name})
 );
 chatSocket.onmessage = function (e) {
