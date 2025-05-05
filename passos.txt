@@ -8,5 +8,5 @@
 8. daphne ChatProject.asgi:application ou python -m daphne ChatProject.asgi:application.
 9. ipconfig no cmd ou powerShell.
 10. pegar o ipv4 do ethernet.
-11 . python -m daphne -b xxx.xxx.x.xx -p 8000 ChatProject.asgi:application
-
+11. python -m daphne -b xxx.xxx.x.xx -p 8000 ChatProject.asgi:application
+12. python manage.py collectstatic
