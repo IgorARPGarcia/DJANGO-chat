@@ -12,7 +12,6 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         #pega o nome da sala da URL.
         self.room_group_name = f'chat_{self.room_name}'
         #define o nome do grupo para fazer a comunicação interna com o django.
-        
         query_string = self.scope.get("query_string", b"").decode()
         params = dict(pair.split('=') for pair in query_string.split('&') if '=' in pair)
 

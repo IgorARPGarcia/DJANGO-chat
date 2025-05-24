@@ -48,6 +48,7 @@ def login_view(request):
                 user = User.objects.create_user(username=username, password=password)
 
             login(request, user)
+            request.session['username'] = username
             return redirect('index')
         else:
             return render(request, 'login.html', {'error': 'Credenciais inválidas'})

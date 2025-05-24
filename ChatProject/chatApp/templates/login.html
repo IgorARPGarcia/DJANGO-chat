@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="enterDiv">
-        <form method="post">
+        <form method="post" id="form-login">
             {% csrf_token %}
             <input type="text" name="username" class="roomInput" placeholder="Usuário" required>
             <input type="password" class="roomInput" name="password" placeholder="Senha" required>
