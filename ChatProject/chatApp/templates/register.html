@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './styles2.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="enterDiv">
+        <form method="POST" action="/">
+        {% csrf_token %}
+        <input type="text" class="roomInput" name="username" placeholder="Usuário" required><br>
+        <input type="password" class="roomInput" name="password" placeholder="Senha" required><br>
+        <input type="password" class="roomInput" name="confirm" placeholder="Confirmar senha" required><br>
+        <button type="submit" class="enterB">Registrar</button>
+        <p>Já tem conta? <a href="{% url 'login' %}" s style="color: green;">Login</a></p>
+    </form>
+    </div>
+</body>
+</html>

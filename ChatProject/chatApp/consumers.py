@@ -1,5 +1,6 @@
 import json
 from channels.generic.websocket import AsyncJsonWebsocketConsumer
+from chatApp.Login import autenticar_usuario, criar_usuario
 
 class ChatConsumer(AsyncJsonWebsocketConsumer):
     rooms = {}  
@@ -11,6 +12,13 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         #pega o nome da sala da URL.
         self.room_group_name = f'chat_{self.room_name}'
         #define o nome do grupo para fazer a comunicação interna com o django.
+        
+        query_string = self.scope.get("query_string", b"").decode()
+        params = dict(pair.split('=') for pair in query_string.split('&') if '=' in pair)
+
+        username = params.get("username")
+        password = params.get("password")
+        auto_register = params.get("register") == "true"
 
         #inicializa a sala se não existir.
         if self.room_name not in self.rooms:

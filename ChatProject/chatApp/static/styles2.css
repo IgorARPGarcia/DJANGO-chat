@@ -77,3 +77,24 @@ form{
         transition: 0.3s;
     }
 }
+
+#usernameInput{
+    width: 70%;
+    height: 90%;
+    border: none;
+    border-radius: 20px;
+    background-color: #e6e3c6;
+    padding-left: 10px;
+    color: #3e7b45;
+
+    &::placeholder{
+        color: #3e7b45;
+        font-family: "Cal Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+}
+
+#passwordInput{
+
+}

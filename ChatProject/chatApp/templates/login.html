@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './styles2.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Cal+Sans&family=Faculty+Glyphic&family=Overpass:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <script src="{% static './script2.js' %}" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="enterDiv">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" class="roomInput" placeholder="Usuário" required>
+            <input type="password" class="roomInput" name="password" placeholder="Senha" required>
+            <button type="submit" class="enterB">Entrar</button>
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+            <p>Já tem conta? <a href="{% url 'register' %}">Register</a></p>
+        </form>
+    </div>
+</body>
+</html>
